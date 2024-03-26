@@ -1,7 +1,7 @@
 #include "BaseFileSystem.h"
 
 BaseFileSystem::BaseFileSystem(const WCHAR *pFileName) {
-	clusterSize = NULL;
+	clusterSize = 0;
 	fileHandle = INVALID_HANDLE_VALUE;
 
 	HANDLE fh = CreateFileW(pFileName, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -34,8 +34,6 @@ void BaseFileSystem::setClusterSize(unsigned int clSize) {
 	clusterSize = clSize;
 }
 
-unsigned int BaseFileSystem::getClusterSize() {
+unsigned int BaseFileSystem::getClusterSize() const {
 	return clusterSize;
 }
-
-void BaseFileSystem::readClusterNumber() {}

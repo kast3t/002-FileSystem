@@ -27,7 +27,7 @@ FAT32::~FAT32() {}
 
 void FAT32::readClusterNumber(DWORD clusterNumber, BYTE *pResultBuffer) {
 	DWORD clusterSize = getClusterSize();
-	if (clusterSize == NULL) {
+	if (clusterSize == 0) {
 		throw "Ошибка чтения кластера: размер кластера не определён";
 	}
 

@@ -13,7 +13,7 @@ int main()
 		BYTE *pBuffer = new BYTE[fat32.getClusterSize()];
 		fat32.readClusterNumber(2, pBuffer);
 
-		std::cout << "Буфер успешно прочитан! Часть буфера (до нуль-байта): " << pBuffer;
+		std::cout << "Кластер успешно прочитан! Часть буфера (до нуль-байта): " << pBuffer;
 		std::cin.get();
 
 		delete[] pBuffer;
